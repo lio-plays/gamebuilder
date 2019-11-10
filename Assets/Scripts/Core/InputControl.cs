@@ -174,8 +174,8 @@ public class InputControl : MonoBehaviour
       keyCodeAlt=KeyCode.L,
       modKeyCodeAlt=KeyCode.LeftCommand}},
     {"Console",new ActionMap(){
-      keyCode=KeyCode.BackQuote,
-      modKeyCode=KeyCode.None,
+      keyCode=KeyCode.C,
+      modKeyCode=KeyCode.LeftShift,
       keyCodeAlt=KeyCode.None,
       modKeyCodeAlt=KeyCode.None}},
     {"Parent",new ActionMap(){

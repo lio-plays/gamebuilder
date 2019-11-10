@@ -1,3 +1,19 @@
+# Fork of Game Builder 
+(https://github.com/googlearchive/gamebuilder)
+
+I try little changes here.
+
+This is for insiders only.
+
+## Changes
+
+* console toggle is now shift-c, german keyboard does not like "`".
+
+---
+---
+
+# Original Upstream README
+
 This project is no longer actively developed or maintained.
 
 # Game Builder
