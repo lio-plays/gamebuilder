@@ -159,11 +159,11 @@ public class NetworkingController : Photon.PunBehaviour
   {
     if (!isFocused)
     {
-      Application.targetFrameRate = 30;
+      Application.targetFrameRate = 10;
     }
     else
     {
-      Application.targetFrameRate = -1;
+      Application.targetFrameRate = 30;
     }
   }
 
