@@ -77,6 +77,10 @@ public class CommandConsoleUI : MonoBehaviour
     UpdateTextInUI();
     inputField.ActivateInputField();
     hudManager.UpdateVerticalOffsetAsPercent(GetHeightInPercent());
+        //TEST
+        terminal.command_text = "jshotload start c";
+        terminal.EnterCommand();
+
   }
 
   void Close()
