@@ -32,13 +32,14 @@ public class BehaviorHotLoader : MonoBehaviour
       "];\n\n" +
       "// Your functions here.";
   private const string PLACEHOLDER_ID = "__PLACEHOLDER_ID__";
+  private const string PLACEHOLDER_NAME = "__PLACEHOLDER_NAME__";
   private static readonly string NEW_FILE_METADATA_TEMPLATE =
     ("{\n" +
     "  'cardSystemCardData' : {\n" +
     "    'userProvidedId': '" + PLACEHOLDER_ID + "',\n" +
     "    'isCard': true,\n" +
-    "    'title': 'Your Card Title',\n" +
-    "    'description': 'Your Card Description.',\n" +
+    "    'title': '" + PLACEHOLDER_NAME + "',\n" +
+    "    'description': 'Your_Card_Description.',\n" +
     "    'categories' : ['Action']\n" +
     "  }\n" +
     "}").Replace('\'', '"');
@@ -295,7 +296,7 @@ public class BehaviorHotLoader : MonoBehaviour
       string metaFilePath = filePath + ".metaJson";
       File.WriteAllText(filePath, NEW_FILE_TEMPLATE);
       string guid = behaviorSystem.GenerateUniqueId();
-      File.WriteAllText(filePath + ".metaJson", NEW_FILE_METADATA_TEMPLATE.Replace(PLACEHOLDER_ID, guid));
+      File.WriteAllText(filePath + ".metaJson", NEW_FILE_METADATA_TEMPLATE.Replace(PLACEHOLDER_ID, guid).Replace(PLACEHOLDER_NAME, fileName));
       CommandTerminal.HeadlessTerminal.Log($"Created {filePath} and {metaFilePath}.");
     }
     catch (IOException ex)
