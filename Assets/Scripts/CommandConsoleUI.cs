@@ -79,7 +79,7 @@ public class CommandConsoleUI : MonoBehaviour
     hudManager.UpdateVerticalOffsetAsPercent(GetHeightInPercent());
         //TEST
         terminal.command_text = "jshotload start c";
-        terminal.EnterCommand();
+        EnterCommand();//ED
 
   }
 
@@ -290,17 +290,22 @@ public class CommandConsoleUI : MonoBehaviour
   void OnInputFieldEnd(string s)
   {
     if (Input.GetButtonDown("Submit"))
-    {
-      terminal.EnterCommand();
-      inputField.text = terminal.command_text;
-      inputField.text = "";
-      inputField.ActivateInputField();
-      // Go to bottom of history
-      logScrollPosition = Mathf.Max(0, processedLogLines.Count - MAX_VISIBLE_LINES);
+        {
+            EnterCommand();//ED
+        }
     }
-  }
 
-  private void OnScrollbarBeginDrag(PointerEventData data)
+    private void EnterCommand()
+    {
+        terminal.EnterCommand();
+        inputField.text = terminal.command_text;
+        inputField.text = "";
+        inputField.ActivateInputField();
+        // Go to bottom of history
+        logScrollPosition = Mathf.Max(0, processedLogLines.Count - MAX_VISIBLE_LINES);
+    }
+
+    private void OnScrollbarBeginDrag(PointerEventData data)
   {
     Vector2 localPoint;
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
