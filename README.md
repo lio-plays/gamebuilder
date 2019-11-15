@@ -10,7 +10,7 @@ This is for insiders only.
 * new cards have basic title from filename
 * "jshotload start c" on opening console
 * console toggle is now shift-c, german keyboard does not like "`".
-* framerate changed to 30 focused, 10 unfocused
+* framerate changed from 30 to 10 when unfocused
 
 ---
 ---

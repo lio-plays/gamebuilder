@@ -163,7 +163,7 @@ public class NetworkingController : Photon.PunBehaviour
     }
     else
     {
-      Application.targetFrameRate = 30;
+      Application.targetFrameRate = -1;
     }
   }
 
