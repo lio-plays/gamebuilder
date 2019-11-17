@@ -11,6 +11,7 @@ This is for insiders only.
 * "jshotload start c" on opening console
 * console toggle is now shift-c, german keyboard does not like "`".
 * framerate changed from 30 to 10 when unfocused
+  * framelimits are keept when refocused
 
 ---
 ---
