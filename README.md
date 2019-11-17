@@ -9,14 +9,21 @@ This is for insiders only.
 
 * new cards have basic title from filename
 * "jshotload start c" on opening console
-* console toggle is now shift-c, german keyboard does not like "`".
-* framerate changed from 30 to 10 when unfocused
+* console toggle is now shift-c, german keyboard does not like "`"
+* framerate changed to 10 instead of 30 when unfocused
   * framelimits are keept when refocused
 
+## Upstream changes
+
+see [builds/README.txt](builds/README.txt):
+
+* Downloading only binaries from [builds/](builds/) is official.
+* multiplayer gets its id from a file.
+
 ---
 ---
 
-# Original Upstream README
+# Original Upstream README:
 
 This project is no longer actively developed or maintained.
 
