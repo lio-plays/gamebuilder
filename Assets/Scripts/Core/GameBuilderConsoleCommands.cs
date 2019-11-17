@@ -34,7 +34,7 @@ public class GameBuilderConsoleCommands : MonoBehaviour
     VoosEngine voosEngine;
     UIMonkeyTester monkeyTester;
     WorkshopAssetSource workshop;
-    NetworkingController networkingController;//BM
+    NetworkingController networkingController;
 
     void Awake()
     {
@@ -44,7 +44,7 @@ public class GameBuilderConsoleCommands : MonoBehaviour
         Util.FindIfNotSet(this, ref voosEngine);
         Util.FindIfNotSet(this, ref monkeyTester);
         Util.FindIfNotSet(this, ref workshop);
-        Util.FindIfNotSet(this, ref networkingController);//BM
+        Util.FindIfNotSet(this, ref networkingController);
         main = this;
     }
 
@@ -391,8 +391,8 @@ public class GameBuilderConsoleCommands : MonoBehaviour
         if (args.Length == 2)
         {
             QualitySettings.vSyncCount = args[0].Int;
-            Application.targetFrameRate = args[1].Int;//BM
-            main.networkingController.targetFrameRateFocused = Application.targetFrameRate;//BM
+            Application.targetFrameRate = args[1].Int;
+            main.networkingController.targetFrameRateFocused = Application.targetFrameRate;
         }
         Log($"vSyncCount: {QualitySettings.vSyncCount}. targetFrameRate: {Application.targetFrameRate}");
     }

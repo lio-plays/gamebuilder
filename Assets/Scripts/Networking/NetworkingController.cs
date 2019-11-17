@@ -26,8 +26,7 @@ using UNET = UnityEngine.Networking;
 // TODO probably should rename this to just MainController...but also cordone off some of the networking-specific stuff into a new utility.
 public class NetworkingController : Photon.PunBehaviour
 {
-    //BM
-    public int targetFrameRateFocused = -1;//BM
+    public int targetFrameRateFocused = -1;
 
     // From experiments, it seems like 490kb for that one RPC was a guaranteed
     // disconnect. So, let's stay under 400kb to be safe.
@@ -155,7 +154,7 @@ public class NetworkingController : Photon.PunBehaviour
         Util.FindIfNotSet(this, ref workshop);
 
         // Maybe not the best place..? Should be close to OnApplicationFocus below.    
-        Application.targetFrameRate = targetFrameRateFocused;//BM
+        Application.targetFrameRate = targetFrameRateFocused;
     }
 
     void OnApplicationFocus(bool isFocused)
