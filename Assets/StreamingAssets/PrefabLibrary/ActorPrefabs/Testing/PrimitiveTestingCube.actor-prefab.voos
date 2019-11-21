@@ -6,7 +6,7 @@
         "name": "f3f8fe5fcd6d455cbfa7555e15b8ba6b",
         "brainName": "cdf40dfe24804dc7ac5ae8f0fd91544d",
         "tags": [],
-        "renderableUri": "builtin:BuiltinAssets/Primitives/PrimitiveTestingCube",
+        "renderableUri": "builtin:BuiltinAssets/Testing/PrimitiveTestingCube",
         "memoryJson": "{}",
         "displayName": "PrimitiveTestingCube",
         "description": "",
