@@ -20,6 +20,39 @@ see [builds/README.txt](builds/README.txt):
 * Downloading only binaries from [builds/](builds/) is official.
 * multiplayer gets its id from a file.
 
+## Adding models thru unity
+The models will only show up when running with this build.
+
+## How to put a new inbuild actor in the library
+
+### Make the actor known using some existing model
+
+* (Replace "PrimitiveTestingCube" with a name of your choosing)
+* Make a protoactor. Name it "PrimitiveTestingCube". Configure and export it.
+Note: the basecolor from the material below is replaced with the tint from the actor.
+* Move actor.json to somewhere in Assets/StreamingAssets/PrefabLibrary/ActorPrefabs/ . Rename it .../Testing/PrimitiveTestingCube.actor-prefab.voos . 
+* Create a PrimitiveTestingCube-thumbnail.png there too. It is for the library. I copied and repainted from another thumbnail in that folder. 
+* Change the voos. renderableUri must be a prefab. category "shape" works.
+
+        "renderableUri": "builtin:BuiltinAssets/Primitives/PrimitiveCube",
+        "category": "shape",
+
+Test. Is it in the library? Good.
+
+### create a new prefab from your model for the actor
+
+* I used blender. Save a new file below Assets/GameAssets/Resources/BuiltinAssets/ , like .../Testing/PrimitiveTestCube.prefab .
+* Unity imports the file. It looks like a folder. There is a camera, light, a cube and material inside.
+* open a dummy scene (or delete the actor later).
+* Drag the cube in the scene. Drag the material onto the cube. Drag the cuby in the assetlist next to the .blend . Unity creates a prefab for that cube.
+* Add a collider. i copied it from another actor-prefab.
+* Note: the basecolor from the material is replaced with the tint from the voos.
+* Note: only the part above the ground in the model collides.
+* put the filename in the voos from above.
+        "renderableUri": "builtin:BuiltinAssets/Testing/PrimitiveTestingCube", 
+
+Test. Can you drag it from the library and then move? Done.
+
 ---
 ---
 
