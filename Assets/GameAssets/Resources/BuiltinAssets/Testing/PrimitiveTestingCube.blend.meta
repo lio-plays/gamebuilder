@@ -7,15 +7,21 @@ ModelImporter:
     100002: Light
     100004: //RootNode
     100006: PrimitiveTestingCube
+    100008: PrimitiveTestingCubeModel
     400000: Camera
     400002: Light
     400004: //RootNode
     400006: PrimitiveTestingCube
+    400008: PrimitiveTestingCubeModel
     2000000: Camera
     2100000: Material
     2300000: PrimitiveTestingCube
+    2300002: PrimitiveTestingCubeModel
     3300000: PrimitiveTestingCube
+    3300002: PrimitiveTestingCubeModel
     4300000: PrimitiveTestingCube
+    4300002: PrimitiveTestingCubeModel
+    6400000: PrimitiveTestingCubeModel
     10800000: Light
   externalObjects: {}
   materials:

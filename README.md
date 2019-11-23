@@ -5,11 +5,15 @@ I try little changes here.
 
 This is for insiders only.
 
+## First
+
+You may need blender installed to import my models.
+
 ## Changes
 
-* Two demo-models. You may need blender installed for auto-import?
-One static and the other with the same model, but physics enabled. problem with creation, sticks in ground, falls through ground.
-Trying to move origin/pivot in blender, does not work.
+* Two inbuild actors with own model. 
+They use the same model, but different actor settings
+One static and the other with physics and grabbable. More fun.
 * new cards have basic title from filename
 * "jshotload start c" on opening console
 * console toggle is now shift-c, german keyboard does not like "`"
@@ -44,20 +48,24 @@ Test. Is it in the library? Good.
 
 ### create a new prefab from your model for the actor
 
-* I used blender. Save a new file below Assets/GameAssets/Resources/BuiltinAssets/ , like .../Testing/PrimitiveTestCube.prefab .
+* I use blender. Save a new file below Assets/GameAssets/Resources/BuiltinAssets/ , like .../Testing/PrimitiveTestCube.blend .
 * Unity imports the file. It looks like a folder. There is a camera, light, a cube and material inside.
 * open a dummy scene (or delete the actor later).
-* Drag the cube in the scene. Drag the material onto the cube. Drag the cuby in the assetlist next to the .blend . Unity creates a prefab for that cube.
-* Add a collider. Menu NewComponent/Physics/MeshCollider
+* Drag the cube in the scene. Drag the material onto the cube. Add a collider. Menu NewComponent/Physics/MeshCollider.
 * Note: the basecolor from the material is replaced with the tint from the voos.
-* Note: only the part above the ground in the model collides.
-* put the filename in the voos from above.
-        "renderableUri": "builtin:BuiltinAssets/Testing/PrimitiveTestingCube", 
-
+* To solve position issues, give the model a parent. Create an empty (invisible) object. Name that PrimitiveTestingCube. In the hierarchy move the cube into this object. The invisible object tells gamebuilder where the bottom is when you fetch it from the library. 
+* Drag the PrimitiveTestingCube from the hierarchy to the assetlist next to the .blend. Unity creates a prefab for that PrimitiveTestingCube.
+* Put the filename in the voos from above.
+        "renderableUri": "builtin:BuiltinAssets/Testing/PrimitiveTestingCube"
+ 
 Test. Can you drag it from the library and then move? Done.
 
+#### Workarounds
+  * Only the part above the ground in the model collides. Dragged it higher in blender.
+  * Still stuck half in ground when dragged from library. Falls through Ground When physical. Now i use a wrapper object in unity for positioning. Could not get it to use blenders origin.
+
 ### Tricks
-* Without a PrimitiveTestingCube-thumbnail.png the thumbnail from the export is used. But that is from the old model. I could exporting and "voos" again to get a live snapshot.
+* Without a PrimitiveTestingCube-thumbnail.png the thumbnail from the export is used. But that is from the old model. I could export and "voos" again to get a live snapshot.
 
 ---
 ---
