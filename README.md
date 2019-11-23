@@ -3,10 +3,11 @@
 
 I try little changes here.
 
-This is for insiders only. Some pathes and things may be hardcoded. 
+This is for developers. Not professionally tested. Some pathes and things may be hardcoded. 
 
 ## First
 
+* My github default branch is modeltry, not master.
 * This needs Unity3D.
 * You may need blender installed to auto-import my models, not testet without. 
 * More in the original readme below.
