@@ -3,41 +3,34 @@
 
 I try little changes here.
 
-This is for insiders only.
+This is for insiders only. Some pathes and things may be hardcoded. 
 
 ## First
 
-You may need blender installed to import my models.
+* This needs Unity3D.
+* You may need blender installed to auto-import my models, not testet without. 
+* More in the original readme below.
 
-## Changes
+## Changelog
 
-* Two inbuild actors with own model. 
-They use the same model, but different actor settings
-One static and the other with physics and grabbable. More fun.
-* new cards have basic title from filename
-* "jshotload start c" on opening console
-* console toggle is now shift-c, german keyboard does not like "`"
 * framerate changed to 10 instead of 30 when unfocused
-  * framelimits are keept when refocused
+* framelimits are keept when refocused
+* console toggle is now shift-c, german keyboard does not like "`"
+* "jshotload start c" on opening console
+* new cards have basic title from filename
+* Inbuild model and dumb actor.
+* Grabable physical actor sharing that model. 
 
-## Upstream changes
+## How to add actors with models to the library thru unity
+(The models will only show up when running with this build).
 
-see [builds/README.txt](builds/README.txt):
-
-* Downloading only binaries from [builds/](builds/) is official.
-* multiplayer gets its id from a file.
-
-## Adding models thru unity
-The models will only show up when running with this build.
-
-## How to put a new inbuild actor in the library
+**Replace "PrimitiveTestingCube" with a name of your choosing.**
 
 ### Make the actor known using some existing model
 
-* (Replace "PrimitiveTestingCube" with a name of your choosing)
 * Make a protoactor. Name it "PrimitiveTestingCube". Configure and export it.
-Note: the basecolor from the material below is replaced with the tint from the actor.
-* Move actor.json to somewhere in Assets/StreamingAssets/PrefabLibrary/ActorPrefabs/ Rename it .../Testing/PrimitiveTestingCube.actor-prefab.voos . 
+Note: the "basecolor" in unity will be overwritten by the tint from the actor.
+* Move actor.json to somewhere in Assets/StreamingAssets/PrefabLibrary/ActorPrefabs/ . Rename it .../Testing/PrimitiveTestingCube.actor-prefab.voos . 
 * Create a PrimitiveTestingCube-thumbnail.png there too. It is for the library. I copied and repainted from another thumbnail in that folder. 
 * Change the voos. renderableUri must be a prefab. category "shape" works.
 
@@ -46,14 +39,13 @@ Note: the basecolor from the material below is replaced with the tint from the a
 
 Test. Is it in the library? Good.
 
-### create a new prefab from your model for the actor
+### Add an own model to the actor
 
-* I use blender. Save a new file below Assets/GameAssets/Resources/BuiltinAssets/ , like .../Testing/PrimitiveTestCube.blend .
+* I used blender. Saved a new file below Assets/GameAssets/Resources/BuiltinAssets/ , as .../Testing/PrimitiveTestCube.blend .
 * Unity imports the file. It looks like a folder. There is a camera, light, a cube and material inside.
-* open a dummy scene (or delete the actor later).
+* Open a dummy scene (or delete the actor later).
 * Drag the cube in the scene. Drag the material onto the cube. Add a collider. Menu NewComponent/Physics/MeshCollider.
-* Note: the basecolor from the material is replaced with the tint from the voos.
-* To solve position issues, give the model a parent. Create an empty (invisible) object. Name that PrimitiveTestingCube. In the hierarchy move the cube into this object. The invisible object tells gamebuilder where the bottom is when you fetch it from the library. 
+* To solve position issues, give the model a parent. Create an empty (invisible) object. Name that PrimitiveTestingCube. In the hierarchy move the cube into this object. The invisible object tells gamebuilder where the mouse is when you fetch it from the library. 
 * Drag the PrimitiveTestingCube from the hierarchy to the assetlist next to the .blend. Unity creates a prefab for that PrimitiveTestingCube.
 * Put the filename in the voos from above.
         "renderableUri": "builtin:BuiltinAssets/Testing/PrimitiveTestingCube"
@@ -62,12 +54,18 @@ Test. Can you drag it from the library and then move? Done.
 
 #### Workarounds
   * Only the part above the ground in the model collides. Dragged it higher in blender.
-  * Still stuck half in ground when dragged from library. Falls through Ground When physical. Now i use a wrapper object in unity for positioning. Could not get it to use blenders origin.
-
-### Tricks
-* Without a PrimitiveTestingCube-thumbnail.png the thumbnail from the export is used. But that is from the old model. I could export and "voos" again to get a live snapshot.
+  * Without parent sticks half in ground when dragged from library. Falls through Ground when physical. Now i use a wrapper object in unity for positioning. Could not get it to use blenders origin.
+  * Without a PrimitiveTestingCube-thumbnail.png the thumbnail from the export is used. But that is from the old model. I could export and "voos" again to get a live snapshot.
 
 ---
+
+## Upstream news
+
+see [builds/README.txt](builds/README.txt):
+
+* Downloading only binaries from [builds/](builds/) is official.
+* multiplayer gets its id from a file.
+
 ---
 
 # Original Upstream README:
